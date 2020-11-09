@@ -207,6 +207,9 @@ section {
     width: 1200px;
     padding: 0 50px;
     margin: 0 auto;
+    &.section__inner--flex {
+      display: flex;
+    }
   }
 
   & ~ & {
@@ -320,9 +323,15 @@ section {
 .section__main--recommend {
   position: relative;
   padding: 29px 0;
-  // background: #eeeeee;
-  background: coral;
-  // height: 800px;
+
+  .__title {
+    padding-top: 135px;
+    font-size: 40px;
+    line-height: 76px;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    text-decoration: underline;
+  }
 
   .section__header {
     margin-bottom: 0;
@@ -341,18 +350,84 @@ section {
   }
   .box__recommend {
     background: #eee;
+
+    &--reverse {
+      .section__inner--flex {
+        flex-direction: row-reverse;
+      }
+
+      .swiper-button-prev2 {
+        z-index: 100;
+        position: absolute;
+        top: inherit;
+        bottom: 36px;
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+        left: inherit;
+        right: 248px;
+      }
+      .swiper-button-next2 {
+        z-index: 100;
+        position: absolute;
+        top: inherit;
+        bottom: 36px;
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+        left: inherit;
+        right: 188px;
+      }
+    }
   }
 
-  .section__inner {
-    // display: flex;
+  .section__inner--flex {
+    justify-content: space-between;
   }
+
   .box__recommend--tab {
-    width: 288px;
-    background: green;
+    min-width: 288px;
+    background: #ee2d7a;
+    // padding: 57px 0 0 40px;
+    padding-top: 57px;
+    font-family: '맑은 고딕';
+  }
+
+  .recommend__title {
+    padding-left: 40px;
+    margin-top: 21px;
+    max-width: 140px;
+    line-height: 36px;
+    font-size: 30px;
+    font-weight: lighter;
+    letter-spacing: -0.05em;
+    color: #fff;
+
+    &--bold {
+      margin-top: 0;
+      font-weight: 600;
+    }
+  }
+
+  .recommend__desc {
+    padding-left: 40px;
+    max-width: 170px;
+    margin-top: 40px;
+    color: #fff;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
   }
 
   .main-card-swiper--block {
+    margin: 0;
     max-width: 896px;
+
+    &2 {
+      margin: 0;
+      max-width: 896px;
+    }
   }
 
   .swiper-button-prev {
@@ -363,6 +438,7 @@ section {
     left: 90px;
     width: 50px;
     height: 50px;
+    opacity: 0.5;
     transition: left 0.4s cubic-bezier(0.87, 0, 0.13, 1);
     // background: url("../images/");
 
@@ -378,6 +454,7 @@ section {
     left: 150px;
     width: 50px;
     height: 50px;
+    opacity: 0.5;
     transition: right 0.4s cubic-bezier(0.87, 0, 0.13, 1);
 
     &.swiper-button-disabled {
@@ -387,6 +464,9 @@ section {
 
   .info__title--desc {
     max-width: inherit;
+  }
+  .product__container {
+    background: #fff;
   }
 }
 
@@ -400,4 +480,83 @@ section {
   // .product__thumb {
   //   max-width: 288px;
   // }
+}
+
+.section__main--best_review {
+  .info__title {
+    font-weight: normal;
+    font-size: 16px;
+    color: #999999;
+  }
+  .info__desc {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.1em;
+    font-style: italic;
+  }
+  .info__id {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #999999;
+  }
+}
+
+.section__main--beauty_tip {
+  .section__header--sub {
+    text-align: center;
+    margin: 60px auto;
+
+    .sub01 {
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 50px;
+      letter-spacing: -0.05em;
+    }
+    .sub02 {
+      margin-top: 19px;
+      font-size: 26px;
+      line-height: 40px;
+      letter-spacing: -0.05em;
+    }
+  }
+}
+
+.section__main--beauty_take-out {
+  .section__header--sub {
+    text-align: center;
+    margin: 60px auto;
+
+    .sub01 {
+      display: flex;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 50px;
+      letter-spacing: -0.05em;
+    }
+    .sub02 {
+      margin-top: 19px;
+      font-size: 26px;
+      line-height: 40px;
+      letter-spacing: -0.05em;
+    }
+  }
+  .product__box {
+    width: 422px;
+  }
+  .product__item {
+    width: 140px;
+  }
+  .box__sale {
+    display: flex;
+  }
+  .sale__container--left {
+    width: 50%;
+    background: #ee2d7a;
+  }
+  .sale__container--right {
+    width: 50%;
+    
+  }
 }

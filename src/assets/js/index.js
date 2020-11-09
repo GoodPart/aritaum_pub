@@ -38,6 +38,16 @@ const mainCardSwiperBlock = new Swiper('.main-card-swiper--block', {
     spaceBetween: 16
 });
 
+const mainCardSwiperBlock2 = new Swiper('.main-card-swiper--block2', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next2',
+        prevEl: '.swiper-button-prev2',
+    },
+    slidesPerView: 3,
+    spaceBetween: 16
+});
+
 
 
 
