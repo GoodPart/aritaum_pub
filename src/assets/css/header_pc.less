@@ -1,0 +1,89 @@
+.box__header {
+  position: relative;
+}
+
+.box__header--content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  border-bottom: 1px solid #999999;
+}
+
+.box__title--logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .link_head {
+    display: block;
+    width: 100%;
+  }
+}
+
+.box__header--search {
+  position: relative;
+  width: 304px;
+}
+.header__searchbar {
+  width: 100%;
+  padding: 14px 0 14px 59px;
+  border-radius: 30px;
+  background: #f4f4f4;
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-family: '맑은 고딕';
+    font-size: 13px;
+    line-height: 30px;
+    letter-spacing: -0.05em;
+    padding: 14px 0 14px;
+  }
+}
+
+.sprite-icon-search {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.box__header--user_tab {
+  display: flex;
+}
+
+.user_tab__btn {
+  margin-left: 30px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.header__box--navigation {
+  margin: 30px 0;
+}
+.header__navigation--list {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation__item {
+  margin-right: 40px;
+  border-right: 2px solid #eeeeee;
+
+  .item__link {
+    margin-right: 40px;
+  }
+
+  &:last-child {
+    border-right: 0;
+    margin-right: 0;
+  }
+  &--flex {
+    display: flex;
+  }
+}
