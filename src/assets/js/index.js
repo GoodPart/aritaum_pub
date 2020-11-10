@@ -28,6 +28,21 @@ const mainCardSwiper = new Swiper('.main-card-swiper', {
     spaceBetween: 60
 });
 
+const mainCardSwiperSolo = new Swiper('.main-card-swiper--solo', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: "auto",
+    pagination: {
+        el: '.swiper-pagination'
+    }
+    // spaceBetween: 60
+});
+
+
+
 const mainCardSwiperBlock = new Swiper('.main-card-swiper--block', {
     loop: true,
     navigation: {
@@ -52,19 +67,19 @@ const mainCardSwiperBlock2 = new Swiper('.main-card-swiper--block2', {
 
 
 
-//가격 콤마삽입
-function AddComma(num) {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
-    return result =  num.toString().replace(regexp, ',');
-}
+// //가격 콤마삽입
+// function AddComma(num) {
+//     var regexp = /\B(?=(\d{3})+(?!\d))/g;
+//     return result =  num.toString().replace(regexp, ',');
+// }
 
-const infoPrices = document.querySelectorAll(".info__price");
-console.log(infoPrices)
-infoPrices.forEach(infoPrice => {
-    AddComma(Number(infoPrice))
-    infoPrice.innerHTML = result;
+// const infoPrices = document.querySelectorAll(".info__price");
+// console.log(infoPrices)
+// infoPrices.forEach(infoPrice => {
+//     AddComma(Number(infoPrice))
+//     infoPrice.innerHTML = result;
 
-})
+// })
 
 
 
