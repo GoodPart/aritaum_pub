@@ -536,8 +536,11 @@ section {
 
     .box__recommend--card-list--solo {
       position: relative;
+      text-align: center;
+
       &:after {
         content: '';
+        z-index: 100;
         position: absolute;
         width: 40px;
         height: 204px;
@@ -549,10 +552,32 @@ section {
         background-position: 50% 50%;
       }
 
-      &:last-child:after {
-        margin-top: -170px;
-        left: 904px;
-        transform: rotate(180deg);
+      &:last-child {
+        .swiper-slide {
+          img {
+            box-shadow: 0px 0px 70px -10px rgba(0, 0, 0, 0.79);
+          }
+        }
+        &:after {
+          margin-top: -170px;
+          left: 904px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .layout__container--swiper02 {
+    .swiper-slide {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        right: 60px;
+        background: url('../images/main/pc/module06/coupon.png') no-repeat 50% 50%;
+        width: 70px;
+        height: 70px;
+        // background: red;
       }
     }
   }
@@ -661,14 +686,15 @@ section {
     background: #60b0d2;
 
     .main-card-swiper--solo {
-      margin: 0 80px;
+      // margin: 0 80px;
+      margin: 0;
       padding: 116px 0 116px;
       // -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
       // box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
     }
   }
   .main-card-swiper--solo {
-    margin: 0 120px;
+    margin: 0;
     padding: 30px 0 60px;
     // margin: 30px 120px 60px;
   }
@@ -763,6 +789,27 @@ section {
 }
 
 .section__main--beauty_tip {
+  .box__video {
+    padding: 69px 0 79px;
+    background: url('../images/main/pc/module09/module09_bg_01.jpg') no-repeat 50% 50%;
+  }
+  .video__container {
+    position: relative;
+    text-align: center;
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   .section__header--sub {
     text-align: center;
     margin: 60px auto;
