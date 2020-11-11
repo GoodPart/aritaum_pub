@@ -4,9 +4,65 @@ import AOS from 'aos';
 import { info } from 'autoprefixer';
 import { Number } from 'core-js';
 
-console.log("test")
 
-let result = ''
+// const infoPrices = document.querySelectorAll(".info__price");
+// infoPrices.forEach((price, index)=> {
+//     const targetLength =  price.length;
+//     if(!targetLength) {
+//         console.log("없당")
+//     }else {
+//         if(targetLength>4) {
+
+//         }else 
+//     }
+// })
+
+
+
+const __mainVisual02Swiper = document.querySelector(".main-visual02-swiper");
+const __mainVisual02SwiperSlides = __mainVisual02Swiper.querySelectorAll(".swiper-slide");
+const __mainVisual02SwiperSlidesLength = __mainVisual02SwiperSlides.length;
+// console.log(__mainVisual02SwiperSlides)
+// console.log(__mainVisual02SwiperSlides.length)
+
+function setBlock() {
+    const setDiv = document.createElement("div");
+    setDiv.className='box__number';
+    __mainVisual02Swiper.appendChild(setDiv);
+}
+
+function setItem() {
+    const setItem = document.createElement('div')
+    setItem.className = 'box__item';
+
+    const backtick = `
+    <span class="first__numb">${mainVisual02Swiper.activeIndex}</span> / <span class="last__numb">${__mainVisual02SwiperSlidesLength}</span>
+    `
+
+    document.querySelector('.box__number').appendChild(backtick)
+    // return setItem
+}
+
+function setList() {
+    // setBlock();
+    // setItem();
+    // for(let i=0; i<__mainVisual02SwiperSlidesLength; i++ ) {
+    //     setItem()
+        
+    // }
+}
+
+
+
+
+// __mainVisual02SwiperSlides.array.forEach((slide, index) => {
+//     const setDiv = document.createElement("div");
+//     setDiv.className='box__number'
+
+//     __mainVisual02Swiper.innerHTML=setDiv;
+// });
+
+// let result = ''
 
 
 const mainVisual01Swiper = new Swiper('.main-visual01-swiper', {
@@ -15,6 +71,30 @@ const mainVisual01Swiper = new Swiper('.main-visual01-swiper', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+    }
+});
+
+const mainVisual02Swiper = new Swiper('.main-visual02-swiper', {
+    autoplay: true,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        // type: 'custom',
+        // renderFraction: function(currentClass, totalClass) {
+        //     return '<span class="first_numb">'+currentClass+'</span> / <span class="last_numb">'+totalClass+'</span>'
+        // }
+    },
+    on: {
+        init: function() {
+            setList()
+        },
+    //     slideChange: function() {
+
+    //     }
     }
 });
 
@@ -62,6 +142,8 @@ const mainCardSwiperBlock2 = new Swiper('.main-card-swiper--block2', {
     slidesPerView: 3,
     spaceBetween: 16
 });
+
+
 
 
 

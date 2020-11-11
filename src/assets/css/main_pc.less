@@ -225,10 +225,19 @@
   }
   .box__thumb {
     position: relative;
+
+    .__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
   .box__info {
-    padding: 41px 0;
+    box-sizing: border-box;
+    padding: 95px 0;
     text-align: center;
+    border: 1px solid #eeeeee;
+    border-top: none;
   }
 
   .info__title {
@@ -259,11 +268,22 @@
     font-size: 16px;
     letter-spacing: -0.025em;
     border-radius: 30px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+      color: #fff;
+      background: #ee2d7a;
+    }
   }
 
   &.box__item--reverse {
     display: flex;
     flex-direction: column-reverse;
+
+    .box__info {
+      border-top: 1px solid #eeeeee;
+      border-bottom: none;
+    }
   }
 }
 
@@ -381,13 +401,42 @@ section {
   }
 }
 
-.section__main--serprise01 {
+.section__main--hot_keyword {
+  .product__list {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  .product__item {
+    margin-right: 30px;
+  }
+  .product__category {
+    padding: 0;
+    font-family: '맑은 고딕';
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 76px;
+    letter-spacing: 0;
+
+    &.is_active {
+      color: #ee2d7a;
+      text-decoration: underline;
+    }
+  }
+}
+
+.section__main--surprise01 {
   .product__item {
     margin-right: 60px;
     margin-bottom: 40px;
 
     &:nth-child(3n) {
       margin-right: 0;
+    }
+  }
+  .info__price--origin {
+    &:after {
+      content: '원';
+      display: inline;
     }
   }
 }
@@ -444,10 +493,11 @@ section {
     background: #eee;
 
     .box__recommend--article {
-      padding-top: 60px;
+      margin-top: 60px;
 
       &:first-child {
         padding-top: 0;
+        margin-top: 0;
       }
 
       &:last-child {
@@ -485,6 +535,25 @@ section {
     }
 
     .box__recommend--card-list--solo {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 204px;
+        top: 50%;
+        left: 864px;
+        transform: translateY(-50%);
+        background-image: url('../images/main/pc/module06/left.png');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+
+      &:last-child:after {
+        margin-top: -170px;
+        left: 904px;
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -585,23 +654,27 @@ section {
     }
   }
   .layout__container--swiper {
+    position: relative;
     background: #fff;
   }
   .layout__container--swiper02 {
     background: #60b0d2;
 
     .main-card-swiper--solo {
-      margin: 116px 80px;
-      -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
-      box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
+      margin: 0 80px;
+      padding: 116px 0 116px;
+      // -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
+      // box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.91);
     }
   }
   .main-card-swiper--solo {
-    margin: 30px 120px 60px;
+    margin: 0 120px;
+    padding: 30px 0 60px;
+    // margin: 30px 120px 60px;
   }
 }
 
-.section__main--serprise02 {
+.section__main--surprise02 {
   .product__item:nth-child(4n) {
     margin-right: 0;
   }
@@ -614,6 +687,23 @@ section {
 }
 
 .section__main--visual02 {
+  padding-bottom: 60px;
+
+  .box__layout {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 204px;
+      height: 40px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url('../images/common/common_img_arrow.png');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
   .layout__container {
     height: 800px;
     background: #0b1e60;
@@ -632,6 +722,23 @@ section {
     background-image: url('../images/main/pc/module07/module07_more.jpg');
     background-position: 0 0;
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    opacity: 0.5;
+  }
+  .swiper-button-prev {
+    left: 60px;
+  }
+  .swiper-button-next {
+    right: 60px;
+  }
+  .product__item {
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .section__main--best_review {
@@ -641,6 +748,7 @@ section {
     color: #999999;
   }
   .info__desc {
+    margin: 31px;
     font-size: 20px;
     line-height: 30px;
     letter-spacing: -0.1em;
